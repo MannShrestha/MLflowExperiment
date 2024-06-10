@@ -77,6 +77,11 @@ if __name__ == "__main__":
         predictions = lr.predict(train_x)
         signature = infer_signature(train_x, predictions)
 
+        ## For remote server only
+        remote_server_uri = "https://dagshub.com/MannShrestha/MLflowExperiment.mlflow"
+        mlflow.set_tracking_uri(remote_server_uri)
+
+
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
         # Model registry does not work with file store

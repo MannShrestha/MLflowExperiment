@@ -49,12 +49,22 @@ python app.py 0.6 0.6
 mlflow ui
 ```
 
-## Dags hub
+## Dags hub -> connect with github account
 
-import dagshub
-dagshub.init(repo_owner='MannShrestha', repo_name='MLflow', mlflow=True)
+MLFLOW_TRACKING_URI=https://dagshub.com/MannShrestha/MLflowExperiment.mlflow
+MLFLOW_TRACKING_USERNAME=MannShrestha
+MLFLOW_TRACKING_PASSWORD=41f801ddadfd672ed6133c408cdff17b1a85368b
+python script.py
 
-import mlflow
-with mlflow.start_run():
-  mlflow.log_param('parameter name', 'value')
-  mlflow.log_metric('metric name', 1)
+## VScode Terminal
+```bash
+export MLFLOW_TRACKING_URI=https://dagshub.com/MannShrestha/MLflowExperiment.mlflow
+```
+
+```bash
+export MLFLOW_TRACKING_USERNAME=MannShrestha
+```
+
+```bash
+export MLFLOW_TRACKING_PASSWORD=41f801ddadfd672ed6133c408cdff17b1a85368b
+```
